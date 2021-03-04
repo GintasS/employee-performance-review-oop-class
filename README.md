@@ -57,5 +57,7 @@ Enter Usage Here
 
 <h3>CHANGELOG 3/4/2021</h3>
 <ul>
-  <li>Created GitHub repository.</li>
+  <li>Created a GitHub repository.</li>
+  <li>Created a sample project from Quarkus template.</li>
+  <li>Added a branch protection policy, now we can't push to master directly.</li>
 </ul>

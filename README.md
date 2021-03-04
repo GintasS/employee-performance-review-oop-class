@@ -17,21 +17,7 @@ Enter intro here
 
 ## <a name="Features"></a>Features
 
-<ul>
-  <li>Supports advanced searching: you can search through job ads for specific keywords or some other text, like .NET developer or Project Manager.</li>
- <li>Supports multi pages: meaning you can get a whole category(example IT) of job ads instantaniously, without click 2nd page,3rd page and etc.
- </li>
-  <li>Supports two most popular websites:cvonline.lt and cvbankas.lt!</li>
-  <li>Data grid supports sorting by columns, like job title, company, salary and more!</li>
-</ul>
-<h3>Searchable job parts:</h3>
-<ul>
-  <li>Title</li>
-  <li>Company name</li>
-  <li>Address</li>
-  <li>Full job description.</li>
-</ul>
-You can download this application via .zip file.<br>
+Enter Features Here
 
 ## <a name="req"></a>Requirements
 

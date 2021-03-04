@@ -59,5 +59,5 @@ Enter Usage Here
 <ul>
   <li>Created a GitHub repository.</li>
   <li>Created a sample project from Quarkus template.</li>
-  <li>Added a branch protection policy, now we can't push to master directly.</li>
+  <li>Added a branch protection policy, now we can't push to master directly (except for administrators)</li>
 </ul>

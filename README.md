@@ -61,3 +61,10 @@ Enter Usage Here
   <li>Created a sample project from Quarkus template.</li>
   <li>Added a branch protection policy, now we can't push to master directly (except for administrators).</li>
 </ul>
+
+<h3>CHANGELOG 3/5/2021</h3>
+<ul>
+  <li>Onboarded Ivan and Simonas to the project.</li>
+  <li>Created a Trello board for tasks.</li>
+  <li>Created 9 tasks in Trello board, divided work between ourselves.</li>
+</ul>

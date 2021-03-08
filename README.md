@@ -68,3 +68,8 @@ Enter Usage Here
   <li>Created a Trello board for tasks.</li>
   <li>Created 9 tasks in Trello board, divided work between ourselves.</li>
 </ul>
+
+<h3>CHANGELOG 3/8/2021</h3>
+<ul>
+  <li>Simonas has created a PR with our initial employee entity, that will hold our data from a JSON file.</li>
+</ul>

@@ -73,3 +73,10 @@ Enter Usage Here
 <ul>
   <li>Simonas has created a PR with our initial employee entity, that will hold our data from a JSON file.</li>
 </ul>
+
+<h3>CHANGELOG 3/15/2021</h3>
+<ul>
+  <li>Searched for a better project structure and found https://github.com/diegocamara/realworld-api-quarkus. After carefull consideration, will start using this
+  project for better structuring and best practises.</li>
+</ul>
+

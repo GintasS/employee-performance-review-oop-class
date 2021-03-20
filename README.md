@@ -82,7 +82,7 @@ Enter Usage Here
 
 <h3>CHANGELOG 3/20/2021</h3>
 <ul>
-  <li>Applied https://github.com/diegocamara/realworld-api-quarkus project structure</li>
-  <li>Switched from Java 1.8 to Java 11 version</li>
+  <li>Applied https://github.com/diegocamara/realworld-api-quarkus project structure.</li>
+  <li>Switched from Java 1.8 to Java 11 version.</li>
 </ul>
 

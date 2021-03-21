@@ -4,26 +4,22 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.example.employee_performance_review_api.application.web.model.request.NewEmployeeRequest;
-import org.example.employee_performance_review_api.application.web.model.request.UpdateArticleRequest;
 import org.example.employee_performance_review_api.application.web.model.request.UpdateEmployeeRequest;
 import org.example.employee_performance_review_api.application.web.model.response.EmployeeResponse;
 import org.example.employee_performance_review_api.application.web.resource.utils.ResourceUtils;
-import org.example.employee_performance_review_api.domain.feature.*;
+import org.example.employee_performance_review_api.domain.feature.CreateEmployee;
+import org.example.employee_performance_review_api.domain.feature.DeleteEmployeeById;
+import org.example.employee_performance_review_api.domain.feature.FindEmployees;
+import org.example.employee_performance_review_api.domain.feature.UpdateEmployeeById;
 import org.example.employee_performance_review_api.domain.model.constants.ValidationMessages;
-import org.example.employee_performance_review_api.domain.model.employee.UpdateEmployeeInput;
 import org.example.employee_performance_review_api.infrastructure.web.qualifiers.NoWrapRootValueObjectMapper;
-import org.example.employee_performance_review_api.infrastructure.web.security.annotation.Secured;
-import org.example.employee_performance_review_api.infrastructure.web.security.profile.Role;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.SecurityContext;
 import java.util.UUID;
 
 @Path("/employees")

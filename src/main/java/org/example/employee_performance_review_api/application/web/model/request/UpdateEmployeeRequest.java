@@ -5,7 +5,6 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.employee_performance_review_api.domain.model.article.UpdateArticleInput;
 import org.example.employee_performance_review_api.domain.model.employee.UpdateEmployeeInput;
 import org.example.employee_performance_review_api.infrastructure.web.validation.constraint.AtLeastOneFieldMustBeNotNull;
 

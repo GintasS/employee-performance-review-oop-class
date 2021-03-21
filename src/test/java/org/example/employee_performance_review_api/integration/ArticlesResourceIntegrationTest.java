@@ -4,9 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import io.quarkus.test.junit.QuarkusTest;
 import org.apache.http.HttpStatus;
 import org.example.employee_performance_review_api.AbstractIntegrationTest;
-import org.example.employee_performance_review_api.application.web.model.request.NewArticleRequest;
-import org.example.employee_performance_review_api.application.web.model.request.NewCommentRequest;
-import org.example.employee_performance_review_api.application.web.model.request.UpdateArticleRequest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

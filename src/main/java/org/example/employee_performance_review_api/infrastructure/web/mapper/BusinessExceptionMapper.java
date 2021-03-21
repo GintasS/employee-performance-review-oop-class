@@ -33,6 +33,9 @@ public class BusinessExceptionMapper implements ExceptionMapper<BusinessExceptio
     handlerMap.put(TagNotFoundException.class, this::notFound);
     handlerMap.put(ArticleNotFoundException.class, this::notFound);
     handlerMap.put(ModelValidationException.class, this::unprocessableEntity);
+    handlerMap.put(EmployeeNotFoundException.class, this::notFound);
+
+    // TODO add custom exception mappings here
 
     return handlerMap;
   }

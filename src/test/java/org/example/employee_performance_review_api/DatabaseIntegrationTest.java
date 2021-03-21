@@ -21,8 +21,8 @@ public class DatabaseIntegrationTest {
 
   public static EntityManagerFactory entityManagerFactory;
   public static EntityManager entityManager;
-  private static DataSource dataSource;
-  private static Set<String> entities;
+  private static final DataSource dataSource;
+  private static final Set<String> entities;
 
   static {
     entities = new HashSet<>();

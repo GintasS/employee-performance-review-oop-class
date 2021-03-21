@@ -156,9 +156,8 @@ public class AbstractIntegrationTest extends DatabaseIntegrationTest {
           return comment;
         });
   }
-  ;
 
-  private FavoriteRelationshipEntity favoriteRelationshipEntity(
+    private FavoriteRelationshipEntity favoriteRelationshipEntity(
       ArticleEntity article, UserEntity loggedUser) {
     final var favoriteRelationshipEntityKey = favoriteRelationshipEntityKey(article, loggedUser);
     final var favoriteRelationshipEntity = new FavoriteRelationshipEntity();

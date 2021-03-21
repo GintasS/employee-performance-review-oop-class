@@ -5,8 +5,8 @@ import java.util.List;
 
 public class SimpleQueryBuilder {
 
-  private List<String> queryStatements;
-  private List<String> whereStatements;
+  private final List<String> queryStatements;
+  private final List<String> whereStatements;
 
   public SimpleQueryBuilder() {
     this.queryStatements = new LinkedList<>();

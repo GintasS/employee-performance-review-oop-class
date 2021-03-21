@@ -11,7 +11,7 @@ public enum EmployeeType //Whether the employee is an intern - interns get no bo
 
     private final String name;
 
-    private EmployeeType(String name) { this.name = name; }
+    EmployeeType(String name) { this.name = name; }
 
     @Override
     public String toString() { return name; }

@@ -1,7 +1,9 @@
 package org.example.employee_performance_review_api.infrastructure.web.mapper;
 
 import org.example.employee_performance_review_api.application.web.model.response.ErrorResponse;
-import org.example.employee_performance_review_api.domain.exception.*;
+import org.example.employee_performance_review_api.domain.exception.BusinessException;
+import org.example.employee_performance_review_api.domain.exception.EmployeeNotFoundException;
+import org.example.employee_performance_review_api.domain.exception.ModelValidationException;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
@@ -26,12 +28,14 @@ public class BusinessExceptionMapper implements ExceptionMapper<BusinessExceptio
     final var handlerMap =
         new HashMap<Class<? extends BusinessException>, Function<BusinessException, Response>>();
 
+    /*
     handlerMap.put(EmailAlreadyExistsException.class, this::conflict);
     handlerMap.put(UserNotFoundException.class, this::notFound);
     handlerMap.put(InvalidPasswordException.class, this::unauthorized);
     handlerMap.put(UsernameAlreadyExistsException.class, this::conflict);
     handlerMap.put(TagNotFoundException.class, this::notFound);
     handlerMap.put(ArticleNotFoundException.class, this::notFound);
+     */
     handlerMap.put(ModelValidationException.class, this::unprocessableEntity);
     handlerMap.put(EmployeeNotFoundException.class, this::notFound);
 

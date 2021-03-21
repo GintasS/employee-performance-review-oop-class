@@ -6,6 +6,8 @@ import org.example.employee_performance_review_api.domain.model.article.ArticleM
 import org.example.employee_performance_review_api.domain.model.article.FavoriteRelationship;
 import org.example.employee_performance_review_api.domain.model.comment.Comment;
 import org.example.employee_performance_review_api.domain.model.comment.CommentBuilder;
+import org.example.employee_performance_review_api.domain.model.employee.Employee;
+import org.example.employee_performance_review_api.domain.model.employee.EmployeeModelBuilder;
 import org.example.employee_performance_review_api.domain.model.tag.Tag;
 import org.example.employee_performance_review_api.domain.model.tag.TagBuilder;
 import org.example.employee_performance_review_api.domain.model.user.User;
@@ -20,6 +22,7 @@ public class EntityUtils {
   private final TagBuilder tagBuilder;
   private final ArticleModelBuilder articleBuilder;
   private final CommentBuilder commentBuilder;
+  private final EmployeeModelBuilder employeeBuilder;
 
   public User user(UserEntity userEntity) {
     final var id = userEntity.getId();
@@ -30,6 +33,16 @@ public class EntityUtils {
     final var email = userEntity.getEmail();
     return userBuilder.build(id, username, bio, image, password, email);
   }
+
+  public Employee employee(EmployeeEntity employeeEntity) {
+    final var id = employeeEntity.getId();
+    final var firstName = employeeEntity.getFirstName();
+    final var lastName = employeeEntity.getLastName();
+    // TODO map this
+    return employeeBuilder.build(id, firstName, lastName);
+  }
+
+
 
   public Tag tag(TagEntity tagEntity) {
     return tagBuilder.build(tagEntity.getId(), tagEntity.getName());

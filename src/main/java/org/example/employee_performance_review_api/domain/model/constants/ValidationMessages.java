@@ -1,5 +1,7 @@
 package org.example.employee_performance_review_api.domain.model.constants;
 
+import java.util.UUID;
+
 public class ValidationMessages {
 
   public static final String SLUG_MUST_BE_NOT_BLANK = "slug must be not blank";
@@ -11,4 +13,5 @@ public class ValidationMessages {
   public static final String TITLE_MUST_BE_NOT_BLANK = "title must not be blank";
   public static final String DESCRIPTION_MUST_BE_NOT_BLANK = "description must not be blank";
   public static final String BODY_MUST_BE_NOT_BLANK = "body must not be blank";
+  public static final String EMPLOYEE_ID_MUST_NOT_BE_NULL = "employee id must not be null";
 }

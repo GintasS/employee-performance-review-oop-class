@@ -15,10 +15,16 @@ public class CreateEmployeeImpl implements CreateEmployee {
 
     @Override
     public Employee handle(NewEmployeeInput newEmployeeInput) {
-        final var employee =
-                employeeModelBuilder.build(
-                        newEmployeeInput.getFirstName(),
-                        newEmployeeInput.getLastName());
+        final var employee = employeeModelBuilder.build(
+                newEmployeeInput.getFirstName(),
+                newEmployeeInput.getLastName(),
+                newEmployeeInput.getTeam(),
+                newEmployeeInput.getRating(),
+                newEmployeeInput.getType(),
+                newEmployeeInput.getYearlySalary(),
+                newEmployeeInput.getEmploymentTime(),
+                newEmployeeInput.getYearlyBonuses()
+        );
 
         employeeRepository.save(employee);
         return employee;

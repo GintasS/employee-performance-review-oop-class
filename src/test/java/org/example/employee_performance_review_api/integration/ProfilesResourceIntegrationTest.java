@@ -1,4 +1,4 @@
-package org.example.employee_performance_review_api.integration;
+/*package org.example.employee_performance_review_api.integration;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.apache.http.HttpStatus;
@@ -152,3 +152,4 @@ public class ProfilesResourceIntegrationTest extends AbstractIntegrationTest {
             is(false));
   }
 }
+*/

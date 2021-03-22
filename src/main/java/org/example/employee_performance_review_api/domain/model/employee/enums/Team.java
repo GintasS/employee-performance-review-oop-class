@@ -11,7 +11,7 @@ public enum Team {
 
     private final String name;
 
-    private Team(String name) {
+    Team(String name) {
         this.name = name;
     }
 

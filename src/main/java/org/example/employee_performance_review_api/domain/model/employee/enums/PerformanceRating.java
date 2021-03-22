@@ -11,7 +11,7 @@ public enum PerformanceRating {
 
     private final String name;
 
-    private PerformanceRating(String name) {
+    PerformanceRating(String name) {
         this.name = name;
     }
 

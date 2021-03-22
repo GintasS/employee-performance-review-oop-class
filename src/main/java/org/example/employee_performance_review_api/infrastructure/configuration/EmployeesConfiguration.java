@@ -2,10 +2,8 @@ package org.example.employee_performance_review_api.infrastructure.configuration
 
 import org.example.employee_performance_review_api.domain.feature.*;
 import org.example.employee_performance_review_api.domain.feature.impl.*;
-import org.example.employee_performance_review_api.domain.model.employee.Employee;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeModelBuilder;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
-import org.example.employee_performance_review_api.domain.model.employee.UpdateEmployeeInput;
 import org.example.employee_performance_review_api.domain.validator.ModelValidator;
 
 import javax.enterprise.context.Dependent;

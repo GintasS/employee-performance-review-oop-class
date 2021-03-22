@@ -1,6 +1,5 @@
 package org.example.employee_performance_review_api.util;
 
-import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.UserEntity;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.UUID;

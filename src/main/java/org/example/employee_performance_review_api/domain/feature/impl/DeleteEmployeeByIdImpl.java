@@ -3,7 +3,6 @@ package org.example.employee_performance_review_api.domain.feature.impl;
 import lombok.AllArgsConstructor;
 import org.example.employee_performance_review_api.domain.feature.DeleteEmployeeById;
 import org.example.employee_performance_review_api.domain.feature.FindEmployeeById;
-import org.example.employee_performance_review_api.domain.model.employee.Employee;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
 
 import java.util.UUID;

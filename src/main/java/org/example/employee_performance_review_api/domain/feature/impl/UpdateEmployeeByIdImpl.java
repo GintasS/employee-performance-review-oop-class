@@ -1,17 +1,12 @@
 package org.example.employee_performance_review_api.domain.feature.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.employee_performance_review_api.domain.feature.*;
-import org.example.employee_performance_review_api.domain.model.article.Article;
-import org.example.employee_performance_review_api.domain.model.article.ArticleRepository;
-import org.example.employee_performance_review_api.domain.model.article.UpdateArticleInput;
+import org.example.employee_performance_review_api.domain.feature.FindEmployeeById;
+import org.example.employee_performance_review_api.domain.feature.UpdateEmployeeById;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
 import org.example.employee_performance_review_api.domain.model.employee.UpdateEmployeeInput;
 import org.example.employee_performance_review_api.domain.validator.ModelValidator;
-
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 

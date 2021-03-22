@@ -1,7 +1,6 @@
 package org.example.employee_performance_review_api.domain.feature.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.employee_performance_review_api.application.web.model.response.EmployeeResponse;
 import org.example.employee_performance_review_api.domain.feature.CreateEmployee;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeModelBuilder;

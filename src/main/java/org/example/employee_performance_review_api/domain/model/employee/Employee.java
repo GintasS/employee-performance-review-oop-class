@@ -1,19 +1,13 @@
 package org.example.employee_performance_review_api.domain.model.employee;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.example.employee_performance_review_api.domain.model.constants.ValidationMessages;
-import org.example.employee_performance_review_api.domain.model.employee.enums.EmployeeType;
-import org.example.employee_performance_review_api.domain.model.employee.enums.PerformanceRating;
-import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor(access = AccessLevel.PROTECTED)

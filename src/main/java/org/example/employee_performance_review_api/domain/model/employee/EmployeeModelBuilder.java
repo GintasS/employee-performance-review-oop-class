@@ -1,11 +1,9 @@
 package org.example.employee_performance_review_api.domain.model.employee;
 
 import lombok.AllArgsConstructor;
-import org.example.employee_performance_review_api.domain.model.user.User;
 import org.example.employee_performance_review_api.domain.validator.ModelValidator;
 
 import javax.inject.Named;
-import java.util.Random;
 import java.util.UUID;
 
 @Named

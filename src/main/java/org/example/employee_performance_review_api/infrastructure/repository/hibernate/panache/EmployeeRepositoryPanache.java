@@ -1,25 +1,16 @@
 package org.example.employee_performance_review_api.infrastructure.repository.hibernate.panache;
 
-import io.quarkus.panache.common.Page;
-import io.quarkus.panache.common.Sort;
 import lombok.AllArgsConstructor;
-import org.example.employee_performance_review_api.domain.model.article.Article;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
-import org.example.employee_performance_review_api.domain.model.user.User;
-import org.example.employee_performance_review_api.domain.model.user.UserRepository;
 import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EmployeeEntity;
 import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EntityUtils;
-import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.UserEntity;
-import org.example.employee_performance_review_api.infrastructure.repository.hibernate.panache.utils.SimpleQueryBuilder;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
-import static io.quarkus.panache.common.Parameters.with;
 
 @ApplicationScoped
 @AllArgsConstructor

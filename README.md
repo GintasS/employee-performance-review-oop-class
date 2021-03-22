@@ -86,3 +86,9 @@ Enter Usage Here
   <li>Switched from Java 1.8 to Java 11 version.</li>
 </ul>
 
+<h3>CHANGELOG 3/22/2021</h3>
+<ul>
+  <li>Added 4 CRUD endpoints for employee.</li>
+  <li>Cleaned up the project solution, deleted many files.</li>
+  <li>Cleaned Postman tests.</li>
+</ul>

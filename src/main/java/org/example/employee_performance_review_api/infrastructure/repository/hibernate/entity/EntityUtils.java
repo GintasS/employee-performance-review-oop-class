@@ -5,6 +5,7 @@ import org.example.employee_performance_review_api.domain.model.employee.Employe
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeModelBuilder;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.util.UUID;
 
 @ApplicationScoped
 @AllArgsConstructor
@@ -12,10 +13,17 @@ public class EntityUtils {
   private final EmployeeModelBuilder employeeBuilder;
 
   public Employee employee(EmployeeEntity employeeEntity) {
-    final var id = employeeEntity.getId();
+    final var id = UUID.fromString(employeeEntity.getId());
     final var firstName = employeeEntity.getFirstName();
     final var lastName = employeeEntity.getLastName();
-    // TODO map this
-    return employeeBuilder.build(id, firstName, lastName);
+    final var team = employeeEntity.getTeam();
+    final var rating = employeeEntity.getRating();
+    final var type = employeeEntity.getType();
+    final var yearlySalary = employeeEntity.getYearlySalary();
+    final var employmentTime = employeeEntity.getEmploymentTime();
+    final var yearlyBonuses = employeeEntity.getYearlyBonuses();
+
+
+    return employeeBuilder.build(id, firstName, lastName, team, rating, type, yearlySalary, employmentTime, yearlyBonuses);
   }
 }

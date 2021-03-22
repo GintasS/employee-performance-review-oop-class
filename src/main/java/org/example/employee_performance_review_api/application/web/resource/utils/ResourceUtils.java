@@ -6,6 +6,7 @@ import org.example.employee_performance_review_api.domain.feature.*;
 import org.example.employee_performance_review_api.domain.model.article.Article;
 import org.example.employee_performance_review_api.domain.model.article.PageResult;
 import org.example.employee_performance_review_api.domain.model.comment.Comment;
+import org.example.employee_performance_review_api.domain.model.employee.Employee;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.core.SecurityContext;
@@ -53,6 +54,18 @@ public class ResourceUtils {
             .collect(Collectors.toList());
     return new ArticlesResponse(resultResponse, pageResult.getTotal());
   }
+
+  public EmployeesResponse employeesResponse(List<Employee> employees) {
+    final var resultsResponse = employees.stream().map(employee -> employeeResponse(employee))
+            .collect(Collectors.toList());
+
+    return new EmployeesResponse(resultsResponse);
+  }
+
+  public EmployeeResponse employeeResponse(Employee employee) {
+    return new EmployeeResponse(employee);
+  }
+
 
   public CommentResponse commentResponse(Comment comment, UUID loggedUserId) {
     final var commentAuthor = comment.getAuthor();

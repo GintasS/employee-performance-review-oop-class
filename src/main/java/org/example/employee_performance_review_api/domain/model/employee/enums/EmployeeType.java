@@ -1,4 +1,4 @@
-package org.acme.enums;
+package org.example.employee_performance_review_api.domain.model.employee.enums;
 
 public enum EmployeeType //Whether the employee is an intern - interns get no bonuses.
 {

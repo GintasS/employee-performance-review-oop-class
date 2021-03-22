@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "0574ad8a-a525-43ae-8e1e-5fd9756037f4",
-    "name": "Conduit",
+    "name": "Conduit 2",
     "description": "Collection for testing the Conduit API\n\nhttps://github.com/gothinkster/realworld",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
@@ -290,6 +290,227 @@
         }
       ]
     },
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "Create Employee",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "e711dbf8-8065-4ba8-8b74-f1639a7d8208",
+                "type": "text/javascript",
+                "exec": [
+                  "var responseJSON = JSON.parse(responseBody);",
+                  "",
+                  "tests['Response contains \"employee\" property'] = responseJSON.hasOwnProperty('employee');",
+                  "",
+                  "var employee = responseJSON.article || {};",
+                  "",
+                  "tests['Article has \"firstName\" property'] = article.hasOwnProperty('firstName');",
+                  "tests['Article has \"lastName\" property'] = article.hasOwnProperty('lastName');",
+                  "",
+                  ""
+
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Requested-With",
+                "value": "XMLHttpRequest"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\"}}"
+            },
+            "url": {
+              "raw": "{{APIURL}}/employees",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All Employees",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var is200Response = responseCode.code === 200;",
+                  "",
+                  "tests['Response code is 200 OK'] = is200Response;",
+                  "",
+                  "if(is200Response){",
+                  "    var responseJSON = JSON.parse(responseBody);",
+                  "",
+                  "    tests['Response contains \"employees\" property'] = responseJSON.hasOwnProperty('employees');",
+                  "",
+                  "    if(responseJSON.articles.length){",
+                  "        var employee = responseJSON.employees[0];",
+                  "",
+                  "        tests['Employee has \"firstName\" property'] = article.hasOwnProperty('firstName');",
+                  "        tests['Employee has \"lastName\" property'] = article.hasOwnProperty('lastName');",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Requested-With",
+                "value": "XMLHttpRequest"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{APIURL}}/employees",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Requested-With",
+                "value": "XMLHttpRequest"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{APIURL}}/employees/{{id}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "employees",
+                "{{id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Employee",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (!(environment.isIntegrationTest)) {",
+                  "var responseJSON = JSON.parse(responseBody);",
+                  "",
+                  "tests['Response contains \"employee\" property'] = responseJSON.hasOwnProperty('employee');",
+                  "",
+                  "var employee = responseJSON.employee || {};",
+                  "",
+                  "tests['Employee has \"firstName\" property'] = employee.hasOwnProperty('firstName');",
+                  "tests['Employee has \"lastName\" property'] = employee.hasOwnProperty('lastName');",
+
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Requested-With",
+                "value": "XMLHttpRequest"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"employee\":{\"firstName\":\"With two hands\", \"lastName\":\"TEST\"}}"
+            },
+            "url": {
+              "raw": "{{APIURL}}/employees/{{id}}",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "employees",
+                "{{id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "67853a4a-e972-4573-a295-dad12a46a9d7",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "3057f989-15e4-484e-b8fa-a041043d0ac0",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+
     {
       "name": "Articles",
       "item": [

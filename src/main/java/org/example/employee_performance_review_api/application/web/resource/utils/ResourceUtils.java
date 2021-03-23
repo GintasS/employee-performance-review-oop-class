@@ -1,6 +1,7 @@
 package org.example.employee_performance_review_api.application.web.resource.utils;
 
 import lombok.AllArgsConstructor;
+import org.example.employee_performance_review_api.application.web.model.response.EmployeeBonusResponse;
 import org.example.employee_performance_review_api.application.web.model.response.EmployeeResponse;
 import org.example.employee_performance_review_api.application.web.model.response.EmployeesResponse;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
@@ -22,6 +23,10 @@ public class ResourceUtils {
 
   public EmployeeResponse employeeResponse(Employee employee) {
     return new EmployeeResponse(employee);
+  }
+
+  public EmployeeBonusResponse employeeBonusResponse(double bonus) {
+    return new EmployeeBonusResponse(bonus);
   }
 
 }

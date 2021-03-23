@@ -15,14 +15,14 @@ import java.util.UUID;
 public class EmployeeModelBuilder {
     private final ModelValidator modelValidator;
 
-    public Employee build(String firstName, String lastName, Team team, PerformanceRating rating, EmployeeType employeeType, int yearlySalary, int employmentTime, List<Integer> yearlyBonuses) {
+    public Employee build(String firstName, String lastName, Team team, PerformanceRating rating, EmployeeType employeeType, double yearlySalary, int employmentTime, List<Double> yearlyBonuses) {
 
         return modelValidator.validate(new Employee(UUID.randomUUID(), firstName, lastName, team, rating, employeeType, yearlySalary, employmentTime, yearlyBonuses));
 
         // TODO: Fix this place to validate the user input.
     }
 
-    public Employee build(UUID id, String firstName, String lastName, Team team, PerformanceRating rating, EmployeeType employeeType, int yearlySalary, int employmentTime, List<Integer> yearlyBonuses) {
+    public Employee build(UUID id, String firstName, String lastName, Team team, PerformanceRating rating, EmployeeType employeeType, double yearlySalary, int employmentTime, List<Double> yearlyBonuses) {
 
         return modelValidator.validate(new Employee(id, firstName, lastName, team, rating, employeeType, yearlySalary, employmentTime, yearlyBonuses));
 

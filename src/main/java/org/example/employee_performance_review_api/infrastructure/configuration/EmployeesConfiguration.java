@@ -41,6 +41,12 @@ public class EmployeesConfiguration {
 
   @Produces
   @Singleton
+  public CalculateEmployeeBonus calculateEmployeeBonus() {
+    return new CalculateEmployeeBonusImpl();
+  }
+
+  @Produces
+  @Singleton
   public FindEmployeeById findEmployeeById(EmployeeRepository employeeRepository, EntityUtils entityUtils) {
     return new FindEmployeeByIdImpl(employeeRepository, entityUtils);
   }

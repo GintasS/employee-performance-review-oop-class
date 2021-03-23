@@ -7,7 +7,12 @@ public enum PerformanceRating {
     GOOD("Good"),
     ACCEPTABLE("Acceptable"),
     POOR("Poor"),
-    UNACCEPTABLE("Unacceptable");
+    UNACCEPTABLE("Unacceptable"),
+
+    // TODO make EVALUATING as a default value for employee
+    EVALUATING("Evaluating");
+
+
 
     private final String name;
 

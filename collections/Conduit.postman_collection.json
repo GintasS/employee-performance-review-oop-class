@@ -47,7 +47,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\":\"1000\", \"yearlyBonuses\": [\"1000\", \"2000\", \"3000\" ]   }}"
+              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\":\"1000.0\", \"yearlyBonuses\": [\"1000.0\", \"2000.0\", \"3000.0\" ]   }}"
             },
             "url": {
               "raw": "{{APIURL}}/employees",
@@ -187,7 +187,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\":\"1000\", \"yearlyBonuses\": [\"1000\", \"2000\", \"3000\" ]   }}"
+              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\":\"1000.0\", \"yearlyBonuses\": [\"1000.0\", \"2000.0\", \"3000.0\" ]   }}"
             },
             "url": {
               "raw": "{{APIURL}}/employees/{{id}}",
@@ -197,6 +197,63 @@
               "path": [
                 "employees",
                 "{{id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Employee bonus",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var is200Response = responseCode.code === 200;",
+                  "",
+                  "tests['Response code is 200 OK'] = is200Response;",
+                  "",
+                  "if(is200Response){",
+                  "    var responseJSON = JSON.parse(responseBody);",
+                  "",
+                  "    tests['Response contains \"employees\" property'] = responseJSON.hasOwnProperty('employees');",
+                  "",
+                  "    if(responseJSON.articles.length){",
+                  "        var employee = responseJSON.employees[0];",
+                  "",
+                  "        tests['Employee has \"firstName\" property'] = article.hasOwnProperty('firstName');",
+                  "        tests['Employee has \"lastName\" property'] = article.hasOwnProperty('lastName');",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Requested-With",
+                "value": "XMLHttpRequest"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{APIURL}}/employees/{id}/bonus",
+              "host": [
+                "{{APIURL}}"
+              ],
+              "path": [
+                "employees/{id}/bonus"
               ]
             }
           },

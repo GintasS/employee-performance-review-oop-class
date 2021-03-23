@@ -92,3 +92,12 @@ Enter Usage Here
   <li>Cleaned up the project solution, deleted many files.</li>
   <li>Cleaned Postman tests.</li>
 </ul>
+
+<h3>CHANGELOG 3/23/2021</h3>
+<ul>
+  <li>Integrated working JSON reader, writer to hold our employee data.</li>
+  <li>Now our request, response, entity, model classes hold full employee data.</li>
+  <li>Added File IO.</li>
+  <li>Added default values for some Postman collections.</li>
+  <li>Added default values for some Postman endpoints</li>
+</ul>

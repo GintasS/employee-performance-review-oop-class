@@ -22,9 +22,9 @@ public class NewEmployeeRequest {
     private Team team;
     private PerformanceRating rating;
     private EmployeeType type;
-    private int yearlySalary;
+    private double yearlySalary;
     private int employmentTime;
-    private List<Integer> yearlyBonuses;
+    private List<Double> yearlyBonuses;
 
     public NewEmployeeInput toNewEmployeeInput() {
         return new NewEmployeeInput(this.firstName, this.lastName, this.team, this.rating, this.type, this.yearlySalary, this.employmentTime, this.yearlyBonuses);

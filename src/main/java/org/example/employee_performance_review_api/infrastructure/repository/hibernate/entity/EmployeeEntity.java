@@ -30,16 +30,19 @@ public class EmployeeEntity {
   private Team team;
   private PerformanceRating rating;
   private EmployeeType type;
-  private int yearlySalary;
+
+
+  private double yearlySalary;
   private int employmentTime;
-  private List<Integer> yearlyBonuses;
+
+  private List<Double> yearlyBonuses;
 
   public EmployeeEntity(Employee employee) {
     update(employee);
   }
 
   public EmployeeEntity(UUID id, String firstName, String lastName, Team team, PerformanceRating rating, EmployeeType type,
-                        int yearlySalary, int employmentTime, List<Integer> yearlyBonuses)
+                        double yearlySalary, int employmentTime, List<Double> yearlyBonuses)
   {
     this.id = id.toString();
     this.firstName = firstName;

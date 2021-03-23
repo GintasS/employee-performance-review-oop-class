@@ -27,9 +27,9 @@ public class UpdateEmployeeRequest {
   private Team team;
   private PerformanceRating rating;
   private EmployeeType type;
-  private int yearlySalary;
+  private double yearlySalary;
   private int employmentTime;
-  private List<Integer> yearlyBonuses;
+  private List<Double> yearlyBonuses;
 
   public UpdateEmployeeInput toUpdateEmployeeInput(UUID id) {
     return new UpdateEmployeeInput(id, this.firstName, this.lastName, this.team, this.rating, this.type, this.yearlySalary, this.employmentTime, this.yearlyBonuses);

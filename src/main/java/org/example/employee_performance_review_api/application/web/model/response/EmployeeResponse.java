@@ -28,9 +28,9 @@ public class EmployeeResponse {
     private Team team;
     private PerformanceRating rating;
     private EmployeeType type;
-    private int yearlySalary;
+    private double yearlySalary;
     private int employmentTime;
-    private List<Integer> yearlyBonuses;
+    private List<Double> yearlyBonuses;
 
     public EmployeeResponse(Employee employee) {
         this.id = employee.getId();

@@ -17,7 +17,7 @@ public class NewEmployeeInput {
     private Team team;
     private PerformanceRating rating;
     private EmployeeType type;
-    private int yearlySalary;
+    private double yearlySalary;
     private int employmentTime;
-    private List<Integer> yearlyBonuses;
+    private List<Double> yearlyBonuses;
 }

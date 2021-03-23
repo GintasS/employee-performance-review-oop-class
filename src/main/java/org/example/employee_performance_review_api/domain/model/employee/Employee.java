@@ -39,12 +39,12 @@ public class Employee {
 
     // What the employee's current yearly salary is.
     // 5 year bonuses cannot exceed current yearly salary 6 times.
-    private int yearlySalary;
+    private double yearlySalary;
 
     // How long (in years) the employee has worked in the company.
     // Time defines the percentage of yearly salary for the bonus.
     private int employmentTime;
 
     // The list of previous bonuses that are relevant to the bonus calculation.
-    private List<Integer> yearlyBonuses;
+    private List<Double> yearlyBonuses;
 }

@@ -28,7 +28,23 @@ public class UpdateEmployeeByIdImpl implements UpdateEmployeeById {
       if (isNotBlank(updateEmployeeInput.getLastName())) {
         employee.setLastName(updateEmployeeInput.getLastName());
       }
-      // TODO finish this
+
+      if (isNotBlank(updateEmployeeInput.getTeam().toString())) {
+        employee.setTeam(updateEmployeeInput.getTeam());
+      }
+
+      if (isNotBlank(updateEmployeeInput.getRating().toString())) {
+        employee.setRating(updateEmployeeInput.getRating());
+      }
+      if (isNotBlank(updateEmployeeInput.getType().toString())) {
+        employee.setType(updateEmployeeInput.getType());
+      }
+
+      if (updateEmployeeInput.getYearlyBonuses().size() > 0) {
+        employee.setYearlyBonuses(updateEmployeeInput.getYearlyBonuses());
+      }
+
+      // TODO Think about integers, should we validate them here.
 
       employeeRepository.update(modelValidator.validate(employee));
     }
@@ -37,7 +53,11 @@ public class UpdateEmployeeByIdImpl implements UpdateEmployeeById {
   }
 
   private boolean atLeastOneFieldIsNotBlank(UpdateEmployeeInput updateEmployeeInput) {
-    return isNotBlank(updateEmployeeInput.getFirstName()) ||
-            isNotBlank(updateEmployeeInput.getLastName());
+    return  isNotBlank(updateEmployeeInput.getFirstName()) ||
+            isNotBlank(updateEmployeeInput.getLastName()) ||
+            isNotBlank(updateEmployeeInput.getTeam().toString()) ||
+            isNotBlank(updateEmployeeInput.getRating().toString()) ||
+            isNotBlank(updateEmployeeInput.getType().toString()) ||
+            updateEmployeeInput.getYearlyBonuses().size() > 0;
   }
 }

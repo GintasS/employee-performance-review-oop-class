@@ -1,6 +1,8 @@
 package org.example.employee_performance_review_api.domain.model.employee;
 
 
+import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EmployeeEntity;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -14,9 +16,11 @@ public interface EmployeeRepository {
 
     void update(Employee employee);
 
-    List<Employee> findAllEmployees();
+    List<EmployeeEntity> findAllEmployees();
 
-    Optional<Employee> findEmployeeById(UUID id);
+    void saveAllEmployees(List<EmployeeEntity> employees);
+
+    Optional<EmployeeEntity> findEmployeeById(UUID id);
 
     // boolean existsBy(String field, String value);
 

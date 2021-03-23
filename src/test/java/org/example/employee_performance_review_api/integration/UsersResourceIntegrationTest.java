@@ -1,4 +1,4 @@
-package org.example.employee_performance_review_api.integration;
+/*package org.example.employee_performance_review_api.integration;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.quarkus.test.junit.QuarkusTest;
@@ -204,3 +204,4 @@ public class UsersResourceIntegrationTest extends AbstractIntegrationTest {
         .body("errors.body", hasItems("Unauthorized"));
   }
 }
+*/

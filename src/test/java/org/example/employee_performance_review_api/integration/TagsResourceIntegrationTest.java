@@ -1,4 +1,4 @@
-package org.example.employee_performance_review_api.integration;
+/*package org.example.employee_performance_review_api.integration;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.apache.http.HttpStatus;
@@ -37,3 +37,4 @@ public class TagsResourceIntegrationTest extends AbstractIntegrationTest {
             hasItems(tag1.getName(), tag2.getName(), tag3.getName(), tag4.getName()));
   }
 }
+*/

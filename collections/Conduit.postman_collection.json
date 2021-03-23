@@ -47,7 +47,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\"}}"
+              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\":\"1000\", \"yearlyBonuses\": [\"1000\", \"2000\", \"3000\" ]   }}"
             },
             "url": {
               "raw": "{{APIURL}}/employees",
@@ -187,7 +187,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"employee\":{\"firstName\":\"With two hands\", \"lastName\":\"TEST\"}}"
+              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\":\"1000\", \"yearlyBonuses\": [\"1000\", \"2000\", \"3000\" ]   }}"
             },
             "url": {
               "raw": "{{APIURL}}/employees/{{id}}",

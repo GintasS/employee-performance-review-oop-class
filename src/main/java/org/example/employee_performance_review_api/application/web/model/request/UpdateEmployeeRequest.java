@@ -6,8 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.employee_performance_review_api.domain.model.employee.UpdateEmployeeInput;
+import org.example.employee_performance_review_api.domain.model.employee.enums.EmployeeType;
+import org.example.employee_performance_review_api.domain.model.employee.enums.PerformanceRating;
+import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
 import org.example.employee_performance_review_api.infrastructure.web.validation.constraint.AtLeastOneFieldMustBeNotNull;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -19,11 +23,16 @@ import java.util.UUID;
 public class UpdateEmployeeRequest {
 
   private String firstName;
-
   private String lastName;
+  private Team team;
+  private PerformanceRating rating;
+  private EmployeeType type;
+  private int yearlySalary;
+  private int employmentTime;
+  private List<Integer> yearlyBonuses;
 
   public UpdateEmployeeInput toUpdateEmployeeInput(UUID id) {
-    return new UpdateEmployeeInput(id, this.firstName, this.lastName);
+    return new UpdateEmployeeInput(id, this.firstName, this.lastName, this.team, this.rating, this.type, this.yearlySalary, this.employmentTime, this.yearlyBonuses);
 
     // TODO finish this mapping.
   }

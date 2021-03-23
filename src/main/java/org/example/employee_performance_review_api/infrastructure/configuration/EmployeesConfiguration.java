@@ -5,6 +5,7 @@ import org.example.employee_performance_review_api.domain.feature.impl.*;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeModelBuilder;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
 import org.example.employee_performance_review_api.domain.validator.ModelValidator;
+import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EntityUtils;
 
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;
@@ -22,8 +23,8 @@ public class EmployeesConfiguration {
 
   @Produces
   @Singleton
-  public FindEmployees findEmployees(EmployeeRepository employeeRepository) {
-    return new FindEmployeesImpl(employeeRepository);
+  public FindEmployees findEmployees(EmployeeRepository employeeRepository, EntityUtils entityUtils) {
+    return new FindEmployeesImpl(employeeRepository, entityUtils);
   }
 
   @Produces
@@ -40,8 +41,8 @@ public class EmployeesConfiguration {
 
   @Produces
   @Singleton
-  public FindEmployeeById findEmployeeById(EmployeeRepository employeeRepository) {
-    return new FindEmployeeByIdImpl(employeeRepository);
+  public FindEmployeeById findEmployeeById(EmployeeRepository employeeRepository, EntityUtils entityUtils) {
+    return new FindEmployeeByIdImpl(employeeRepository, entityUtils);
   }
 
   @Produces

@@ -1,24 +1,26 @@
 package org.example.employee_performance_review_api.domain.feature.impl;
 
 import lombok.AllArgsConstructor;
-import org.example.employee_performance_review_api.domain.feature.CreateEmployee;
 import org.example.employee_performance_review_api.domain.feature.FindEmployees;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
-import org.example.employee_performance_review_api.domain.model.employee.EmployeeModelBuilder;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
-import org.example.employee_performance_review_api.domain.model.employee.NewEmployeeInput;
+import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EntityUtils;
 
-import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 public class FindEmployeesImpl implements FindEmployees {
 
     private final EmployeeRepository employeeRepository;
+    private final EntityUtils entityUtils;
 
     @Override
     public List<Employee> handle() {
-        final var employees = employeeRepository.findAllEmployees();
+        final var employees = employeeRepository.findAllEmployees()
+                .stream()
+                .map(entityUtils::employee)
+                .collect(Collectors.toList());
 
         return employees;
     }

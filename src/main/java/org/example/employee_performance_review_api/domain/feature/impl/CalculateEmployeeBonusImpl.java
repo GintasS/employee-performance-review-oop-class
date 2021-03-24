@@ -10,6 +10,7 @@ import org.example.employee_performance_review_api.domain.model.employee.enums.P
 import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
 import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EntityUtils;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
 public class CalculateEmployeeBonusImpl implements CalculateEmployeeBonus {
 
     @Override
-    public double handle(Employee employee) {
+    public BigDecimal handle(Employee employee) {
 
         final var employmentTime = employee.getEmploymentTime();
         final var employeeSalary = employee.getYearlySalary();
@@ -25,39 +26,38 @@ public class CalculateEmployeeBonusImpl implements CalculateEmployeeBonus {
         final var employeeTeam = employee.getTeam();
         final var employeePerformanceRating = employee.getRating();
         final var employeeYearlyBonuses = employee.getYearlyBonuses();
-        var bonus = 0d;
+        var bonus = new BigDecimal(0);
 
         if (employeeType.equals(EmployeeType.INTERN)) {
-            return 0;
+            return new BigDecimal(0);
         }
 
         if (isEmployeeValidForBonus(employeeYearlyBonuses, employeeSalary) == false) {
-            return 0;
+            return new BigDecimal(0);
         }
 
         if (employmentTime < 1) {
-            bonus = employeeSalary * 0.5;
+            bonus = employeeSalary.multiply(BigDecimal.valueOf(0.5));
         }
         else if (employmentTime >= 1 && employmentTime <= 3) {
             bonus = employeeSalary;
         }
         else {
-            bonus = employeeSalary * 1.25;
+            bonus = employeeSalary.multiply(BigDecimal.valueOf(1.25));
         }
 
         if (employeeTeam.equals(Team.SENMANAGE)) {
-            bonus *= 2;
+            bonus = bonus.multiply(BigDecimal.valueOf(2));
         }
 
         if (employeePerformanceRating.equals(PerformanceRating.EXCEPTIONAL)) {
-            bonus += bonus * 0.5;
+            bonus = bonus.multiply(BigDecimal.valueOf(1.5));
         }
 
         return bonus;
     }
 
-    private boolean isEmployeeValidForBonus(List<Double> yearlyBonuses, double salary) {
-
+    private boolean isEmployeeValidForBonus(List<BigDecimal> yearlyBonuses, BigDecimal salary) {
 
         // Checks yearlyBonuses in the groups of 5.
         // Will not count groups less than 5 members.
@@ -80,23 +80,22 @@ public class CalculateEmployeeBonusImpl implements CalculateEmployeeBonus {
         //       4 5 6 7 8
         //         5 6 7 8 9
 
+        var salaryMultipliedBySix = salary.multiply(BigDecimal.valueOf(6));
         for(int i = 0; i < yearlyBonuses.size(); i++) {
 
             var start = 0 + i;
             var end = start + 5;
-            var sumOfBonusesOf5yearsInRow = 0;
+            var sumOfBonusesOf5yearsInRow = new BigDecimal(0);
 
             if (yearlyBonuses.size() < 5 || end > yearlyBonuses.size()) {
                 break;
             }
 
             for (int y = start; y < end ; y++) {
-                sumOfBonusesOf5yearsInRow += yearlyBonuses.get(y);
+                sumOfBonusesOf5yearsInRow = sumOfBonusesOf5yearsInRow.add(yearlyBonuses.get(y));
             }
 
-            System.out.println("SUM when start: " + start + " end: " + end + " sum: " + sumOfBonusesOf5yearsInRow);
-
-            if (sumOfBonusesOf5yearsInRow > salary * 6) {
+            if (sumOfBonusesOf5yearsInRow.compareTo(salaryMultipliedBySix) > 1) {
                 return false;
             }
         }

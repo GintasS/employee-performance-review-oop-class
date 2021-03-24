@@ -9,6 +9,7 @@ import org.example.employee_performance_review_api.domain.model.employee.enums.E
 import org.example.employee_performance_review_api.domain.model.employee.enums.PerformanceRating;
 import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,9 +19,9 @@ import java.util.UUID;
 @RegisterForReflection
 public class EmployeeBonusResponse {
 
-    private double bonus;
+    private BigDecimal bonus;
 
-    public EmployeeBonusResponse(double bonus) {
+    public EmployeeBonusResponse(BigDecimal bonus) {
         this.bonus = bonus;
     }
 }

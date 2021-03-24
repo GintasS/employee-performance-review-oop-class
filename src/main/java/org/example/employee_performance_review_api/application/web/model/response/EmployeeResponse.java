@@ -12,6 +12,7 @@ import org.example.employee_performance_review_api.domain.model.employee.enums.T
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -28,9 +29,9 @@ public class EmployeeResponse {
     private Team team;
     private PerformanceRating rating;
     private EmployeeType type;
-    private double yearlySalary;
+    private BigDecimal yearlySalary;
     private int employmentTime;
-    private List<Double> yearlyBonuses;
+    private List<BigDecimal> yearlyBonuses;
 
     public EmployeeResponse(Employee employee) {
         this.id = employee.getId();

@@ -7,6 +7,7 @@ import org.example.employee_performance_review_api.application.web.model.respons
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,7 +26,7 @@ public class ResourceUtils {
     return new EmployeeResponse(employee);
   }
 
-  public EmployeeBonusResponse employeeBonusResponse(double bonus) {
+  public EmployeeBonusResponse employeeBonusResponse(BigDecimal bonus) {
     return new EmployeeBonusResponse(bonus);
   }
 

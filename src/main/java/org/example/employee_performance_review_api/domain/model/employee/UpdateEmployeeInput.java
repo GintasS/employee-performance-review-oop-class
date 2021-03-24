@@ -6,6 +6,7 @@ import org.example.employee_performance_review_api.domain.model.employee.enums.E
 import org.example.employee_performance_review_api.domain.model.employee.enums.PerformanceRating;
 import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,9 +20,9 @@ public class UpdateEmployeeInput {
     private Team team;
     private PerformanceRating rating;
     private EmployeeType type;
-    private double yearlySalary;
+    private BigDecimal yearlySalary;
     private int employmentTime;
-    private List<Double> yearlyBonuses;
+    private List<BigDecimal> yearlyBonuses;
 
     // TODO finish all the values
 }

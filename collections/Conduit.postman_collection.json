@@ -47,7 +47,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\":\"1000.0\", \"yearlyBonuses\": [\"1000.0\", \"2000.0\", \"3000.0\" ]   }}"
+              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\": 1000.0, \"employmentTime\": 0, \"yearlyBonuses\": [1000.0, 2000.0, 3000.0] }}"
             },
             "url": {
               "raw": "{{APIURL}}/employees",
@@ -187,7 +187,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\":\"1000.0\", \"yearlyBonuses\": [\"1000.0\", \"2000.0\", \"3000.0\" ]   }}"
+              "raw": "{\"employee\":{\"firstName\":\"How to train your dragon\", \"lastName\":\"Ever wonder how?\", \"team\":\"MIDMANAGE\", \"rating\":\"EXCEPTIONAL\", \"type\":\"FULLTIME\", \"yearlySalary\": 1000.0, \"employmentTime\": 0, \"yearlyBonuses\": [1000.0, 2000.0, 3000.0] }}"
             },
             "url": {
               "raw": "{{APIURL}}/employees/{{id}}",

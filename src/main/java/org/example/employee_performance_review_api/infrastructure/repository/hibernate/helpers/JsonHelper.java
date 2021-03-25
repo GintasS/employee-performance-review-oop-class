@@ -7,6 +7,7 @@ import org.example.employee_performance_review_api.infrastructure.repository.hib
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -25,11 +26,11 @@ public class JsonHelper {
             var team = Team.valueOf(arr.getJSONObject(i).getString("team"));
             var rating = PerformanceRating.valueOf(arr.getJSONObject(i).getString("rating"));
             var type = EmployeeType.valueOf(arr.getJSONObject(i).getString("type"));
-            var yearlySalary = arr.getJSONObject(i).getInt("yearlySalary");
+            var yearlySalary = arr.getJSONObject(i).getBigDecimal("yearlySalary");
             var employmentTime = arr.getJSONObject(i).getInt("employmentTime");
 
             var yearlyBonusesObjectArray = arr.getJSONObject(i).getJSONArray("yearlyBonuses").toList();
-            var yearlyBonuses = yearlyBonusesObjectArray.stream().map(x -> (Integer)x)
+            var yearlyBonuses = yearlyBonusesObjectArray.stream().map(x -> new BigDecimal(x.toString()))
                     .collect(Collectors.toList());
 
             employees.add(new EmployeeEntity(id, firstName, lastName, team, rating, type, yearlySalary, employmentTime, yearlyBonuses));

@@ -9,6 +9,7 @@ import org.example.employee_performance_review_api.domain.model.employee.enums.E
 import org.example.employee_performance_review_api.domain.model.employee.enums.PerformanceRating;
 import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -22,9 +23,9 @@ public class NewEmployeeRequest {
     private Team team;
     private PerformanceRating rating;
     private EmployeeType type;
-    private int yearlySalary;
+    private BigDecimal yearlySalary;
     private int employmentTime;
-    private List<Integer> yearlyBonuses;
+    private List<BigDecimal> yearlyBonuses;
 
     public NewEmployeeInput toNewEmployeeInput() {
         return new NewEmployeeInput(this.firstName, this.lastName, this.team, this.rating, this.type, this.yearlySalary, this.employmentTime, this.yearlyBonuses);

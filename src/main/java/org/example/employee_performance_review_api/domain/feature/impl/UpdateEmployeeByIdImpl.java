@@ -8,6 +8,8 @@ import org.example.employee_performance_review_api.domain.model.employee.Employe
 import org.example.employee_performance_review_api.domain.model.employee.UpdateEmployeeInput;
 import org.example.employee_performance_review_api.domain.validator.ModelValidator;
 
+import java.math.BigDecimal;
+
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @AllArgsConstructor
@@ -22,9 +24,11 @@ public class UpdateEmployeeByIdImpl implements UpdateEmployeeById {
     final var employee = findEmployeeById.handle(updateEmployeeInput.getId());
 
     if (atLeastOneFieldIsNotBlank(updateEmployeeInput)) {
+
       if (isNotBlank(updateEmployeeInput.getFirstName())) {
         employee.setFirstName(updateEmployeeInput.getFirstName());
       }
+
       if (isNotBlank(updateEmployeeInput.getLastName())) {
         employee.setLastName(updateEmployeeInput.getLastName());
       }
@@ -36,9 +40,13 @@ public class UpdateEmployeeByIdImpl implements UpdateEmployeeById {
       if (isNotBlank(updateEmployeeInput.getRating().toString())) {
         employee.setRating(updateEmployeeInput.getRating());
       }
+
       if (isNotBlank(updateEmployeeInput.getType().toString())) {
         employee.setType(updateEmployeeInput.getType());
       }
+
+      employee.setYearlySalary(updateEmployeeInput.getYearlySalary());
+      employee.setEmploymentTime(updateEmployeeInput.getEmploymentTime());
 
       if (updateEmployeeInput.getYearlyBonuses().size() > 0) {
         employee.setYearlyBonuses(updateEmployeeInput.getYearlyBonuses());

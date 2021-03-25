@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,22 +25,21 @@ public class EmployeeEntity {
 
   // This is a unique identifier for every employee.
   private String id;
-
   private String firstName;
   private String lastName;
   private Team team;
   private PerformanceRating rating;
   private EmployeeType type;
-  private int yearlySalary;
+  private BigDecimal yearlySalary;
   private int employmentTime;
-  private List<Integer> yearlyBonuses;
+  private List<BigDecimal> yearlyBonuses;
 
   public EmployeeEntity(Employee employee) {
     update(employee);
   }
 
   public EmployeeEntity(UUID id, String firstName, String lastName, Team team, PerformanceRating rating, EmployeeType type,
-                        int yearlySalary, int employmentTime, List<Integer> yearlyBonuses)
+                        BigDecimal yearlySalary, int employmentTime, List<BigDecimal> yearlyBonuses)
   {
     this.id = id.toString();
     this.firstName = firstName;

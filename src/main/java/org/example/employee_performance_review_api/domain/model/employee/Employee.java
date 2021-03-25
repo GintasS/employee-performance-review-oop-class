@@ -10,6 +10,7 @@ import org.example.employee_performance_review_api.domain.model.employee.enums.T
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -39,12 +40,12 @@ public class Employee {
 
     // What the employee's current yearly salary is.
     // 5 year bonuses cannot exceed current yearly salary 6 times.
-    private int yearlySalary;
+    private BigDecimal yearlySalary;
 
     // How long (in years) the employee has worked in the company.
     // Time defines the percentage of yearly salary for the bonus.
     private int employmentTime;
 
     // The list of previous bonuses that are relevant to the bonus calculation.
-    private List<Integer> yearlyBonuses;
+    private List<BigDecimal> yearlyBonuses;
 }

@@ -7,10 +7,7 @@ import org.example.employee_performance_review_api.application.web.model.request
 import org.example.employee_performance_review_api.application.web.model.request.UpdateEmployeeRequest;
 import org.example.employee_performance_review_api.application.web.model.response.EmployeeResponse;
 import org.example.employee_performance_review_api.application.web.resource.utils.ResourceUtils;
-import org.example.employee_performance_review_api.domain.feature.CreateEmployee;
-import org.example.employee_performance_review_api.domain.feature.DeleteEmployeeById;
-import org.example.employee_performance_review_api.domain.feature.FindEmployees;
-import org.example.employee_performance_review_api.domain.feature.UpdateEmployeeById;
+import org.example.employee_performance_review_api.domain.feature.*;
 import org.example.employee_performance_review_api.domain.model.constants.ValidationMessages;
 import org.example.employee_performance_review_api.infrastructure.web.qualifiers.NoWrapRootValueObjectMapper;
 
@@ -27,8 +24,11 @@ import java.util.UUID;
 public class EmployeeResource {
   private final CreateEmployee createEmployee;
   private final FindEmployees findEmployees;
+  private final FindEmployeeById findEmployeeById;
   private final DeleteEmployeeById deleteEmployeeById;
   private final UpdateEmployeeById updateEmployeeById;
+  private final CalculateEmployeeBonus calculateEmployeeBonus;
+
   @NoWrapRootValueObjectMapper
   ObjectMapper objectMapper;
   private final ResourceUtils resourceUtils;
@@ -82,4 +82,21 @@ public class EmployeeResource {
                 .build();
     }
 
+    @GET
+    @Transactional
+    @Path("/{id}/bonus")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getBonus(@PathParam("id") @NotNull(message = ValidationMessages.EMPLOYEE_ID_MUST_NOT_BE_NULL) UUID employeeId) {
+
+        final var employee = findEmployeeById.handle(employeeId);
+
+        final var bonus = calculateEmployeeBonus.handle(employee);
+
+        return Response.ok(resourceUtils.employeeBonusResponse(bonus))
+                .status(Response.Status.OK)
+                .build();
+    }
+
+    // TODO read and update for performance rating
 }

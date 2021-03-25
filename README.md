@@ -101,3 +101,12 @@ Enter Usage Here
   <li>Added default values for some Postman collections.</li>
   <li>Added default values for some Postman endpoints</li>
 </ul>
+
+<h3>CHANGELOG 3/25/2021</h3>
+<ul>
+  <li>Added employee bonus id endpoint.</li>
+  <li>Switched from having int for yearlySalary and yearlyBonuses to having BigDecimal, for precision.</li>
+  <li>Fixed Postman endpoints.</li>
+  <li>Fixed small bug regarding updating employee.</li>
+  <li>Other smaller changes.</li>
+</ul>

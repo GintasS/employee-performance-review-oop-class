@@ -1,16 +1,15 @@
 package org.example.employee_performance_review_api.infrastructure.web.mapper;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
 import org.example.employee_performance_review_api.application.web.model.response.ErrorResponse;
 import org.example.employee_performance_review_api.infrastructure.web.exception.ForbiddenException;
 import org.example.employee_performance_review_api.infrastructure.web.exception.InfrastructureException;
 import org.example.employee_performance_review_api.infrastructure.web.exception.UnauthorizedException;
-
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.ExceptionMapper;
-import javax.ws.rs.ext.Provider;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
 
 @Provider
 public class InfrastructureExceptionMapper implements ExceptionMapper<InfrastructureException> {

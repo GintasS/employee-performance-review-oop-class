@@ -1,37 +1,34 @@
 package org.example.employee_performance_review_api.domain.model.employee;
 
-
-import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EmployeeEntity;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
+import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EmployeeEntity;
 
 public interface EmployeeRepository {
 
-    void save(Employee employee);
+  void save(Employee employee);
 
-    void delete(Employee employee);
+  void delete(Employee employee);
 
-    void update(Employee employee);
+  void update(Employee employee);
 
-    List<EmployeeEntity> findAllEmployees();
+  List<EmployeeEntity> findAllEmployees();
 
-    void saveAllEmployees(List<EmployeeEntity> employees);
+  void saveAllEmployees(List<EmployeeEntity> employees);
 
-    Optional<EmployeeEntity> findEmployeeById(UUID id);
+  Optional<EmployeeEntity> findEmployeeById(UUID id);
 
-    // boolean existsBy(String field, String value);
+  // boolean existsBy(String field, String value);
 
-    //Optional<Employee> findByFullName(String firstName, String lastName);
+  // Optional<Employee> findByFullName(String firstName, String lastName);
 
-    //Optional<Employee> findEmployeeById(UUID id);
+  // Optional<Employee> findEmployeeById(UUID id);
 
-    //boolean existsUsername(UUID excludeId, String username);
+  // boolean existsUsername(UUID excludeId, String username);
 
-    //boolean existsEmail(UUID excludeId, String email);
+  // boolean existsEmail(UUID excludeId, String email);
 
-    // TODO add missing methods here.
+  // TODO add missing methods here.
 
 }

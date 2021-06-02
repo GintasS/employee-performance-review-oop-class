@@ -2,17 +2,13 @@ package org.example.employee_performance_review_api.domain.feature.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.employee_performance_review_api.domain.feature.CalculateEmployeeBonus;
-import org.example.employee_performance_review_api.domain.feature.FindEmployees;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
-import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
 import org.example.employee_performance_review_api.domain.model.employee.enums.EmployeeType;
 import org.example.employee_performance_review_api.domain.model.employee.enums.PerformanceRating;
 import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
-import org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity.EntityUtils;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @AllArgsConstructor
 public class CalculateEmployeeBonusImpl implements CalculateEmployeeBonus {
@@ -39,7 +35,7 @@ public class CalculateEmployeeBonusImpl implements CalculateEmployeeBonus {
         if (employmentTime < 1) {
             bonus = employeeSalary.multiply(BigDecimal.valueOf(0.5));
         }
-        else if (employmentTime >= 1 && employmentTime <= 3) {
+        else if (employmentTime <= 3) {
             bonus = employeeSalary;
         }
         else {
@@ -83,7 +79,7 @@ public class CalculateEmployeeBonusImpl implements CalculateEmployeeBonus {
         var salaryMultipliedBySix = salary.multiply(BigDecimal.valueOf(6));
         for(int i = 0; i < yearlyBonuses.size(); i++) {
 
-            var start = 0 + i;
+            var start = i;
             var end = start + 5;
             var sumOfBonusesOf5yearsInRow = new BigDecimal(0);
 
@@ -95,7 +91,7 @@ public class CalculateEmployeeBonusImpl implements CalculateEmployeeBonus {
                 sumOfBonusesOf5yearsInRow = sumOfBonusesOf5yearsInRow.add(yearlyBonuses.get(y));
             }
 
-            if (sumOfBonusesOf5yearsInRow.compareTo(salaryMultipliedBySix) > 1) {
+            if (sumOfBonusesOf5yearsInRow.compareTo(salaryMultipliedBySix) == 1) {
                 return false;
             }
         }

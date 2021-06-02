@@ -16,7 +16,9 @@ import java.util.stream.Collectors;
 public class ResourceUtils {
 
   public EmployeesResponse employeesResponse(List<Employee> employees) {
-    final var resultsResponse = employees.stream().map(employee -> employeeResponse(employee))
+    final var resultsResponse = employees
+            .stream()
+            .map(this::employeeResponse)
             .collect(Collectors.toList());
 
     return new EmployeesResponse(resultsResponse);

@@ -14,12 +14,6 @@ import javax.inject.Singleton;
 @Dependent
 public class ApplicationConfiguration {
 
-  @Produces
-  @Singleton
-  public Slugify slugify() {
-    return new Slugify();
-  }
-
   @Singleton
   @Produces
   public ObjectMapper objectMapper() {

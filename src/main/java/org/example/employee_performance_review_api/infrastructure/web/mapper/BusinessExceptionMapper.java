@@ -28,14 +28,6 @@ public class BusinessExceptionMapper implements ExceptionMapper<BusinessExceptio
     final var handlerMap =
         new HashMap<Class<? extends BusinessException>, Function<BusinessException, Response>>();
 
-    /*
-    handlerMap.put(EmailAlreadyExistsException.class, this::conflict);
-    handlerMap.put(UserNotFoundException.class, this::notFound);
-    handlerMap.put(InvalidPasswordException.class, this::unauthorized);
-    handlerMap.put(UsernameAlreadyExistsException.class, this::conflict);
-    handlerMap.put(TagNotFoundException.class, this::notFound);
-    handlerMap.put(ArticleNotFoundException.class, this::notFound);
-     */
     handlerMap.put(ModelValidationException.class, this::unprocessableEntity);
     handlerMap.put(EmployeeNotFoundException.class, this::notFound);
 
@@ -47,18 +39,6 @@ public class BusinessExceptionMapper implements ExceptionMapper<BusinessExceptio
   private Response notFound(BusinessException businessException) {
     return Response.ok(errorResponse(businessException))
         .status(Response.Status.NOT_FOUND.getStatusCode())
-        .build();
-  }
-
-  private Response conflict(BusinessException businessException) {
-    return Response.ok(errorResponse(businessException))
-        .status(Response.Status.CONFLICT.getStatusCode())
-        .build();
-  }
-
-  private Response unauthorized(BusinessException businessException) {
-    return Response.ok(errorResponse(businessException))
-        .status(Response.Status.UNAUTHORIZED.getStatusCode())
         .build();
   }
 

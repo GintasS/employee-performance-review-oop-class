@@ -3,17 +3,11 @@ package org.example.employee_performance_review_api.infrastructure.repository.hi
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.employee_performance_review_api.domain.model.constants.ValidationMessages;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
 import org.example.employee_performance_review_api.domain.model.employee.enums.EmployeeType;
 import org.example.employee_performance_review_api.domain.model.employee.enums.PerformanceRating;
 import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;

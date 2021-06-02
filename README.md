@@ -7,7 +7,6 @@
   - [Intro](#intro)
   - [Features](#features)
   - [Requirements](#req)
-  - [Media](#media)
   - [Changelog](#changelog)
   
 ## <a name="Intro"></a>Intro
@@ -45,15 +44,6 @@ If employees had an Exceptional performance rating during the last year, their b
 Sum of all bonuses that employee received during any given 5 years IN A ROW cannot exceed their salary during the last year of the period multiplied by 6.
 
 Employee information should be read from the file and saved to a file. 
-
-## <a name="Media"></a>Media
-
-<!---
-<a target="_blank" href="ENTER IMAGE ">
-  <img src="https://github.com/GintasS/JobAds/blob/master/JobAds/Images/image1.JPG" height="350" style="max-width:100%;">
-</a>
-<blockquote>Default app view(taken in 2/13/2020)</blockquote>
--->
 
 ## <a name="Changelog"></a>Changelog
 

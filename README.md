@@ -13,11 +13,18 @@
   
 ## <a name="Intro"></a>Intro
 
-Enter intro here
+This is our team's take into Employee performance review task.
 
 ## <a name="Features"></a>Features
 
-Enter Features Here
+<ul>
+  <li>Exception handling.</li>
+  <li>Validation request models.</li>
+  <li>Using libraries for Json serialization/deserialization.</li>
+  <li>Using Postman collection to test API endpoints.</li>
+  <li>Using Domain-Driven-Design for project structure.</li>
+  <li>Using Trello for task-management.<li>
+</ul>
 
 ## <a name="req"></a>Requirements
 

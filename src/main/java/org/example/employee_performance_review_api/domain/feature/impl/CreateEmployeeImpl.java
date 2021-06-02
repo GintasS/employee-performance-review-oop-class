@@ -10,23 +10,23 @@ import org.example.employee_performance_review_api.domain.model.employee.NewEmpl
 @AllArgsConstructor
 public class CreateEmployeeImpl implements CreateEmployee {
 
-    private final EmployeeRepository employeeRepository;
-    private final EmployeeModelBuilder employeeModelBuilder;
+  private final EmployeeRepository employeeRepository;
+  private final EmployeeModelBuilder employeeModelBuilder;
 
-    @Override
-    public Employee handle(NewEmployeeInput newEmployeeInput) {
-        final var employee = employeeModelBuilder.build(
-                newEmployeeInput.getFirstName(),
-                newEmployeeInput.getLastName(),
-                newEmployeeInput.getTeam(),
-                newEmployeeInput.getRating(),
-                newEmployeeInput.getType(),
-                newEmployeeInput.getYearlySalary(),
-                newEmployeeInput.getEmploymentTime(),
-                newEmployeeInput.getYearlyBonuses()
-        );
+  @Override
+  public Employee handle(NewEmployeeInput newEmployeeInput) {
+    final var employee =
+        employeeModelBuilder.build(
+            newEmployeeInput.getFirstName(),
+            newEmployeeInput.getLastName(),
+            newEmployeeInput.getTeam(),
+            newEmployeeInput.getRating(),
+            newEmployeeInput.getType(),
+            newEmployeeInput.getYearlySalary(),
+            newEmployeeInput.getEmploymentTime(),
+            newEmployeeInput.getYearlyBonuses());
 
-        employeeRepository.save(employee);
-        return employee;
-    }
+    employeeRepository.save(employee);
+    return employee;
+  }
 }

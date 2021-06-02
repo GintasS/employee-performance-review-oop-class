@@ -5,9 +5,9 @@ import java.util.ListIterator;
 import java.util.function.Predicate;
 
 public class GenericListHelper {
-    public static <T> int indexOf(List<T> list, Predicate<? super T> predicate) {
-        for(ListIterator<T> iter = list.listIterator(); iter.hasNext(); )
-            if(predicate.test(iter.next())) return iter.previousIndex();
-        return -1;
-    }
+  public static <T> int indexOf(List<T> list, Predicate<? super T> predicate) {
+    for (ListIterator<T> iter = list.listIterator(); iter.hasNext(); )
+      if (predicate.test(iter.next())) return iter.previousIndex();
+    return -1;
+  }
 }

@@ -1,5 +1,11 @@
 package org.example.employee_performance_review_api.infrastructure.repository.hibernate.panache;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import javax.enterprise.context.ApplicationScoped;
 import lombok.AllArgsConstructor;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
@@ -7,13 +13,6 @@ import org.example.employee_performance_review_api.infrastructure.repository.hib
 import org.example.employee_performance_review_api.infrastructure.repository.hibernate.helpers.FileHelper;
 import org.example.employee_performance_review_api.infrastructure.repository.hibernate.helpers.GenericListHelper;
 import org.example.employee_performance_review_api.infrastructure.repository.hibernate.helpers.JsonHelper;
-
-import javax.enterprise.context.ApplicationScoped;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 @ApplicationScoped
 @AllArgsConstructor
@@ -30,8 +29,8 @@ public class EmployeeRepositoryPanache implements EmployeeRepository {
   @Override
   public void delete(Employee employee) {
 
-    var employees = findAllEmployees()
-            .stream()
+    var employees =
+        findAllEmployees().stream()
             .filter(x -> UUID.fromString(x.getId()).equals(employee.getId()) == false)
             .collect(Collectors.toList());
 
@@ -57,22 +56,25 @@ public class EmployeeRepositoryPanache implements EmployeeRepository {
 
   @Override
   public Optional<EmployeeEntity> findEmployeeById(UUID id) {
-    return findAllEmployees()
-            .stream()
-            .filter(x -> UUID.fromString(x.getId()).equals(id))
-            .findFirst();
+    return findAllEmployees().stream()
+        .filter(x -> UUID.fromString(x.getId()).equals(id))
+        .findFirst();
   }
 
   @Override
   public List<EmployeeEntity> findAllEmployees() {
-    var employeesString = FileHelper.ReadFile("C:\\Users\\Gintautas\\Documents\\IntelliJIDE\\employee-performance-review-oop-class\\src\\main\\java\\org\\example\\employee_performance_review_api\\infrastructure\\repository\\hibernate\\json files\\employees.json");
+    var employeesString =
+        FileHelper.ReadFile(
+            "C:\\Users\\Gintautas\\Documents\\IntelliJIDE\\employee-performance-review-oop-class\\src\\main\\java\\org\\example\\employee_performance_review_api\\infrastructure\\repository\\hibernate\\json files\\employees.json");
     return JsonHelper.DeserializeStringToEmployees(employeesString);
   }
 
   @Override
   public void saveAllEmployees(List<EmployeeEntity> employees) {
     var newEmployeesString = JsonHelper.SerializeEmployeeToString(employees);
-    FileHelper.WriteToFile("C:\\Users\\Gintautas\\Documents\\IntelliJIDE\\employee-performance-review-oop-class\\src\\main\\java\\org\\example\\employee_performance_review_api\\infrastructure\\repository\\hibernate\\json files\\employees.json", newEmployeesString);
+    FileHelper.WriteToFile(
+        "C:\\Users\\Gintautas\\Documents\\IntelliJIDE\\employee-performance-review-oop-class\\src\\main\\java\\org\\example\\employee_performance_review_api\\infrastructure\\repository\\hibernate\\json files\\employees.json",
+        newEmployeesString);
   }
 
   // TODO Implement remaining CRUD methods.

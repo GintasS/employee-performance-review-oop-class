@@ -1,5 +1,8 @@
 package org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity;
 
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.UUID;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,10 +10,6 @@ import org.example.employee_performance_review_api.domain.model.employee.Employe
 import org.example.employee_performance_review_api.domain.model.employee.enums.EmployeeType;
 import org.example.employee_performance_review_api.domain.model.employee.enums.PerformanceRating;
 import org.example.employee_performance_review_api.domain.model.employee.enums.Team;
-
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -32,9 +31,16 @@ public class EmployeeEntity {
     update(employee);
   }
 
-  public EmployeeEntity(UUID id, String firstName, String lastName, Team team, PerformanceRating rating, EmployeeType type,
-                        BigDecimal yearlySalary, int employmentTime, List<BigDecimal> yearlyBonuses)
-  {
+  public EmployeeEntity(
+      UUID id,
+      String firstName,
+      String lastName,
+      Team team,
+      PerformanceRating rating,
+      EmployeeType type,
+      BigDecimal yearlySalary,
+      int employmentTime,
+      List<BigDecimal> yearlyBonuses) {
     this.id = id.toString();
     this.firstName = firstName;
     this.lastName = lastName;
@@ -45,7 +51,6 @@ public class EmployeeEntity {
     this.employmentTime = employmentTime;
     this.yearlyBonuses = yearlyBonuses;
   }
-
 
   public void update(Employee employee) {
     this.id = employee.getId().toString();

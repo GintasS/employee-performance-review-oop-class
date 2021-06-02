@@ -1,3 +1,1 @@
-{
-  "employees": []
-}
+{"employees":[{"firstName":"How to train your dragon with Ivan, Simonas and Gintautas","lastName":"Ever wonder how?","yearlyBonuses":[1000,2000,3000],"rating":"EXCEPTIONAL","employmentTime":0,"id":"7ddd0a5c-4297-4180-ac94-355ebd8b513e","team":"MIDMANAGE","type":"FULLTIME","yearlySalary":1000}]}

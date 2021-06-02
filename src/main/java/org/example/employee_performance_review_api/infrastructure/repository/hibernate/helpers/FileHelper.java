@@ -6,25 +6,23 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class FileHelper {
-    public static String ReadFile(String filePath) {
-        String content = "";
+  public static String ReadFile(String filePath) {
+    String content = "";
 
-        try {
-            content = new String ( Files.readAllBytes( Paths.get(filePath) ) );
-        }
-        catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        return content;
+    try {
+      content = new String(Files.readAllBytes(Paths.get(filePath)));
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
 
-    public static void WriteToFile(String filePath, String data) {
-        try {
-            Files.writeString(Path.of(filePath), data);
-        }
-        catch (IOException ex) {
-            ex.printStackTrace();
-        }
+    return content;
+  }
+
+  public static void WriteToFile(String filePath, String data) {
+    try {
+      Files.writeString(Path.of(filePath), data);
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
+  }
 }

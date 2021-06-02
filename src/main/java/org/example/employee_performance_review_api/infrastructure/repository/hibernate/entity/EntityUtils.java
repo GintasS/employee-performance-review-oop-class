@@ -1,11 +1,10 @@
 package org.example.employee_performance_review_api.infrastructure.repository.hibernate.entity;
 
+import java.util.UUID;
+import javax.enterprise.context.ApplicationScoped;
 import lombok.AllArgsConstructor;
 import org.example.employee_performance_review_api.domain.model.employee.Employee;
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeModelBuilder;
-
-import javax.enterprise.context.ApplicationScoped;
-import java.util.UUID;
 
 @ApplicationScoped
 @AllArgsConstructor
@@ -23,7 +22,7 @@ public class EntityUtils {
     final var employmentTime = employeeEntity.getEmploymentTime();
     final var yearlyBonuses = employeeEntity.getYearlyBonuses();
 
-
-    return employeeBuilder.build(id, firstName, lastName, team, rating, type, yearlySalary, employmentTime, yearlyBonuses);
+    return employeeBuilder.build(
+        id, firstName, lastName, team, rating, type, yearlySalary, employmentTime, yearlyBonuses);
   }
 }

@@ -4,11 +4,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.example.employee_performance_review_api.infrastructure.web.qualifiers.NoWrapRootValueObjectMapper;
-
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;
 import javax.inject.Singleton;
+import org.example.employee_performance_review_api.infrastructure.web.qualifiers.NoWrapRootValueObjectMapper;
 
 @Dependent
 public class ApplicationConfiguration {

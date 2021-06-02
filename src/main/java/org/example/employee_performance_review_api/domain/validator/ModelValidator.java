@@ -1,12 +1,11 @@
 package org.example.employee_performance_review_api.domain.validator;
 
-import lombok.AllArgsConstructor;
-import org.example.employee_performance_review_api.domain.exception.ModelValidationException;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
 import java.util.Set;
 import java.util.stream.Collectors;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+import lombok.AllArgsConstructor;
+import org.example.employee_performance_review_api.domain.exception.ModelValidationException;
 
 @AllArgsConstructor
 public class ModelValidator {

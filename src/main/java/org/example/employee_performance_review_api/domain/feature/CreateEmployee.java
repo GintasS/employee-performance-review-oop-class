@@ -4,5 +4,5 @@ import org.example.employee_performance_review_api.domain.model.employee.Employe
 import org.example.employee_performance_review_api.domain.model.employee.NewEmployeeInput;
 
 public interface CreateEmployee {
-    Employee handle(NewEmployeeInput newEmployeeInput);
+  Employee handle(NewEmployeeInput newEmployeeInput);
 }

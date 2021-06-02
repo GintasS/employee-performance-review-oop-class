@@ -28,7 +28,6 @@
                   "tests['Article has \"lastName\" property'] = article.hasOwnProperty('lastName');",
                   "",
                   ""
-
                 ]
               }
             }
@@ -166,7 +165,6 @@
                   "",
                   "tests['Employee has \"firstName\" property'] = employee.hasOwnProperty('firstName');",
                   "tests['Employee has \"lastName\" property'] = employee.hasOwnProperty('lastName');",
-
                   "}",
                   ""
                 ]

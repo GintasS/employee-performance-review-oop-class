@@ -8,8 +8,6 @@ import org.example.employee_performance_review_api.domain.model.employee.Employe
 import org.example.employee_performance_review_api.domain.model.employee.UpdateEmployeeInput;
 import org.example.employee_performance_review_api.domain.validator.ModelValidator;
 
-import java.math.BigDecimal;
-
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @AllArgsConstructor

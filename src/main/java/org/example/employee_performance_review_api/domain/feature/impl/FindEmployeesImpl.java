@@ -17,11 +17,10 @@ public class FindEmployeesImpl implements FindEmployees {
 
     @Override
     public List<Employee> handle() {
-        final var employees = employeeRepository.findAllEmployees()
+
+        return employeeRepository.findAllEmployees()
                 .stream()
                 .map(entityUtils::employee)
                 .collect(Collectors.toList());
-
-        return employees;
     }
 }

@@ -12,6 +12,8 @@ public class ValidationMessages {
   public static final String DESCRIPTION_MUST_BE_NOT_BLANK = "description must not be blank";
   public static final String BODY_MUST_BE_NOT_BLANK = "body must not be blank";
   public static final String EMPLOYEE_ID_MUST_NOT_BE_NULL = "employee id must not be null";
-  public static final String EMPLOYEE_FIRST_NAME_MUST_BE_NOT_BLANK = "employee first name must not be blank";
-  public static final String EMPLOYEE_LAST_NAME_MUST_BE_NOT_BLANK = "employee last name must not be blank";
+  public static final String EMPLOYEE_FIRST_NAME_MUST_BE_NOT_BLANK =
+      "employee first name must not be blank";
+  public static final String EMPLOYEE_LAST_NAME_MUST_BE_NOT_BLANK =
+      "employee last name must not be blank";
 }

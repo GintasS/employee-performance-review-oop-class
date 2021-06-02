@@ -1,5 +1,7 @@
 package org.example.employee_performance_review_api.domain.feature.impl;
 
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
+
 import lombok.AllArgsConstructor;
 import org.example.employee_performance_review_api.domain.feature.FindEmployeeById;
 import org.example.employee_performance_review_api.domain.feature.UpdateEmployeeById;
@@ -7,8 +9,6 @@ import org.example.employee_performance_review_api.domain.model.employee.Employe
 import org.example.employee_performance_review_api.domain.model.employee.EmployeeRepository;
 import org.example.employee_performance_review_api.domain.model.employee.UpdateEmployeeInput;
 import org.example.employee_performance_review_api.domain.validator.ModelValidator;
-
-import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @AllArgsConstructor
 public class UpdateEmployeeByIdImpl implements UpdateEmployeeById {
@@ -59,11 +59,11 @@ public class UpdateEmployeeByIdImpl implements UpdateEmployeeById {
   }
 
   private boolean atLeastOneFieldIsNotBlank(UpdateEmployeeInput updateEmployeeInput) {
-    return  isNotBlank(updateEmployeeInput.getFirstName()) ||
-            isNotBlank(updateEmployeeInput.getLastName()) ||
-            isNotBlank(updateEmployeeInput.getTeam().toString()) ||
-            isNotBlank(updateEmployeeInput.getRating().toString()) ||
-            isNotBlank(updateEmployeeInput.getType().toString()) ||
-            updateEmployeeInput.getYearlyBonuses().size() > 0;
+    return isNotBlank(updateEmployeeInput.getFirstName())
+        || isNotBlank(updateEmployeeInput.getLastName())
+        || isNotBlank(updateEmployeeInput.getTeam().toString())
+        || isNotBlank(updateEmployeeInput.getRating().toString())
+        || isNotBlank(updateEmployeeInput.getType().toString())
+        || updateEmployeeInput.getYearlyBonuses().size() > 0;
   }
 }

@@ -7,7 +7,6 @@
   - [Intro](#intro)
   - [Features](#features)
   - [Requirements](#req)
-  - [Usage](#usage)
   - [Media](#media)
   - [Changelog](#changelog)
   
@@ -46,10 +45,6 @@ If employees had an Exceptional performance rating during the last year, their b
 Sum of all bonuses that employee received during any given 5 years IN A ROW cannot exceed their salary during the last year of the period multiplied by 6.
 
 Employee information should be read from the file and saved to a file. 
-
-## <a name="Usage"></a>Usage
-
-Enter Usage Here
 
 ## <a name="Media"></a>Media
 

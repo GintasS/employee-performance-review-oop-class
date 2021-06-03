@@ -22,6 +22,7 @@ This is our team's take into Employee performance review task.
   <li>Using Postman collection to test API endpoints.</li>
   <li>Using Domain-Driven-Design for project structure.</li>
   <li>Using Trello for task-management.</li>
+  <li>Following Google Java Code styling for our code base.</li>
 </ul>
 
 ## <a name="req"></a>Requirements

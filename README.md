@@ -103,3 +103,10 @@ Employee information should be read from the file and saved to a file.
   <li>Fixed small bug regarding updating employee.</li>
   <li>Other smaller changes.</li>
 </ul>
+
+<h3>CHANGELOG 6/2/2021</h3>
+<ul>
+  <li>Deleted tests.</li>
+  <li>Refactored some code, applied code inspection recommendations.</li>
+  <li>Applied Google Java Code Styling for our code base.</li>
+</ul>
